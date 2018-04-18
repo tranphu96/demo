@@ -1,0 +1,636 @@
+body {
+    background-color: #f3f3f3;
+    color: #777;
+    font: normal 15px "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+}
+
+.wrapper {
+    margin: 0 auto;
+    padding: 27px 29px;
+    width: 940px;
+}
+
+/* phan header */
+header {
+    height: 100px;
+    background-color: #a65980;
+}
+
+/*Phần ul li của header*/
+#header nav ul li {
+    float: left;
+    display: inline-block;
+    margin-top: 40px;
+}
+
+header nav {
+    float: right;
+    margin-right: 1px;
+    margin-top: -40px;
+}
+
+/*Thẻ a*/
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-right: 20px;
+}
+
+header nav ul li {
+    float: left;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+/*header 2*/
+.header_copy {
+    height: 80px;
+    background: #ececec;
+    margin-top: -43px;
+}
+
+/*p của header 2*/
+.header_copy p {
+    padding: 0px;
+    padding-top: 0px;
+    float: right;
+    margin-bottom: -10px;
+    margin-right: 185px;
+    margin-top: 30px;
+
+}
+
+.header_copy a {
+    text-decoration: none;
+    color: #777777;
+}
+
+/*thẻ h1 của header*/
+header h1 {
+    float: left;
+    margin-top: 26px;
+    margin-left: 230px;
+    font-size: 22px;
+    color: #7f8c8c;
+}
+
+/*slide đau tien*/
+#slide {
+    background: #ffffff;
+    width: 890px;
+    height: 500px;
+    margin: 70px;
+    margin-left: 230px;
+    margin-top: 100px;
+}
+
+/*slide thu 2*/
+#slide2 {
+    background: #ffffff;
+    width: 890px;
+    height: 300px;
+    margin: 70px;
+    margin-left: 230px;
+    margin-top: -40px;
+}
+
+/*Slider 2 bên trái*/
+#slide2_left {
+    background: #ffffff;
+    width: 630px;
+    height: 300px;
+    float: left;
+}
+
+/*slider3 ben phai*/
+#slide2_right {
+    background: #ffffff;
+    width: 250px;
+    height: 300px;
+    float: right;
+}
+
+/*button ảnh 1*/
+.button-1 {
+    display: block;
+    text-align: center;
+    background: #a65980;
+    border-radius: 3px;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.button-1:hover {
+    background-color: #02b8dd;
+}
+
+.button-1 ul li :hover {
+    background-color: white;
+}
+
+/*can chỉnh ảnh */
+#content {
+    margin-left: -13px;
+}
+
+#content ul {
+    margin: -55px 0;
+    list-style: none;
+    background-color: white;
+    background: #f8f8f8;
+}
+
+#content ul li {
+    width: 213px;
+    padding-top: 80px;
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+    background: #f8f8f8;
+}
+
+#content ul li:hover {
+    background-color: white;
+}
+
+#content ul li.content-1 {
+    background: url('../images/girl.png') no-repeat top center;
+    background-color: #ececec;
+
+}
+
+#content2 {
+    height: 150px;
+    width: 890px;
+    background-color: #f3f3f3;
+    margin-top: 200px;
+    margin-left: 235px;
+}
+
+#content2_left {
+    background: #f3f3f3;
+    width: 660px;
+    height: 150px;
+    float: left;
+}
+
+/*slider3 ben phai*/
+#content2_right {
+    background: #f3f3f3;
+    width: 215px;
+    height: 150px;
+    float: right;
+}
+
+#content2_left button {
+    height: 40px;
+    width: 650px;
+    margin-top: 7px;
+    background: #f3f3f3;
+    border-radius: 7px
+}
+
+#content2_right button {
+    height: 40px;
+    width: 200px;
+    margin-top: 7px;
+    background: #f3f3f3;
+    border-radius: 7px
+}
+
+#content2 b {
+    float: left;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+#content2 a {
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.active, .accordion:hover {
+    background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/*
+css tab*/
+#tab {
+    height: 150px;
+    width: 890px;
+    background-color: #ececec;
+    margin-top: 30px;
+    margin-left: 235px;
+    border: none;
+}
+
+#tab_left {
+    background-color: #ececec;
+    width: 650px;
+    height: 150px;
+    float: left;
+    border: none;
+}
+
+/*tag ben phai*/
+#tab_right {
+    background-color: #ececec;
+    width: 220px;
+    height: 150px;
+    float: right;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/*màu button rong tab*/
+.tab button {
+    background-color: #a65980;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px 10px;
+    transition: 0.3s;
+    font-size: 15px;
+    border-radius: 7px;
+}
+
+/* hiệu ứng re chuot */
+.tab button:hover {
+    background-color: #a65980;
+    border: none;
+}
+
+/*màu button sai khi click*/
+.tab button.active {
+    background-color: #02b8dd;
+    border: none;
+}
+
+/* */
+.tabcontent {
+    display: none;
+    padding: 4px 8px;
+    border: none;
+    border-top: none;
+}
+
+#tab image {
+    float: right;
+}
+
+/*css ảnh*/
+#images {
+    height: 440px;
+    width: 890px;
+    margin-left: 235px;
+    margin-top: 10px;
+}
+
+#images_top {
+    height: 230px;
+    width: 100%;
+}
+
+#images_bottom {
+    height: 200px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+#img {
+    margin-left: 11px
+}
+
+/*css text*/
+.text {
+    width: 890px;
+    margin-left: 235px;
+    height: 600px;
+}
+
+.text #hang3 {
+    height: 306px;
+}
+
+.text h4 p {
+
+    padding-top: 140px;
+
+}
+
+.text #text1 {
+    width: 50%;
+    float: right;
+
+}
+
+.text #text2 {
+    width: 50%;
+    padding-top: 1px;
+
+}
+
+.text #text3 {
+    width: 23%;
+    float: right;
+
+}
+
+.text #text4 {
+    width: 73%;
+    padding-top: 1px;
+
+}
+
+.text #text5 {
+    width: 23%;
+    float: right;
+
+}
+
+.text #text6 {
+    width: 23%;
+    float: right;
+    margin-right: 30px;
+}
+
+.text #text7 {
+    width: 23%;
+    float: left;
+
+}
+
+.text #text8 {
+    width: 23%;
+    float: left;
+    margin-left: 30px;
+}
+
+/*list*/
+.list-link {
+    width: 890px;
+    margin-left: 235px;
+    height: 250px;
+    color: #777777;
+}
+
+#link ul {
+    width: 150px;
+    float: left;
+    margin-left: 20px;
+    color: #777777;
+}
+
+#link ul li {
+    margin: 10px 0;
+    color: #777777;
+}
+
+#link ul li a {
+    text-decoration: none;
+    color: #777777;
+}
+
+.link #list1 li a {
+    list-style-position: inside;
+    color: #777777;
+}
+
+/*css view_more*/
+.view_more {
+    width: 890px;
+    margin-left: 235px;
+    height: 100px;
+    border-radius: 5px;
+    background: #ececec;
+}
+
+.button {
+    display: block;
+    text-align: center;
+    background: #02b8dd;
+    border-radius: 3px;
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    text-decoration: none;
+    float: right;
+    margin-top: -50px;
+    margin-right: 20px;
+}
+
+.button:hover {
+    background-color: #a65980;
+    color: #fff;
+}
+
+.view_more h2 {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.view_more p {
+    margin-left: 20px;
+}
+
+/*css table*/
+.table {
+    width: 890px;
+    margin-left: 235px;
+    height: 247px;
+    margin-top: 50px;
+    background: #ececec;
+}
+
+table, th, td {
+    border: 0px solid #7f8c8c;
+    border-style: outset;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    background-color: white;
+    color: #7f8c8c;
+}
+
+#table_1 th {
+    background-color: #ececec;
+    color: #7f8c8c;
+}
+
+#table_bottom table {
+    width: 438px;
+    height: 200px;
+    float: left;
+}
+
+#table_2 {
+    margin-right: 13px;
+}
+
+#table_2 th {
+    background-color: #a65980;
+    color: white;
+}
+
+#table_3 th {
+    background-color: #20a8da;
+    color: white;
+}
+
+/*css footer*/
+.footer {
+    background: #a65980;
+    height: 500px;
+    width: 1341px;
+    margin-top: 550px;
+}
+
+#footer_top {
+    background: #a65980;
+    height: 400px;
+}
+
+#footer_top_info1 {
+    float: left;
+    margin-top: 60px;
+    margin-left: 150px;
+    width: 25%;
+    color: white;
+}
+
+#footer_top_info1 p {
+    padding: 0px;
+    margin: 0px;
+    margin-left: 84px;
+}
+
+#footer_top_info2 {
+    float: left;
+    margin-top: 30px;
+    width: 25%;
+    color: white;
+}
+
+#footer_top_info2 a {
+    text-decoration: none;
+    color: white;
+    margin-left: 40px;
+}
+
+#footer_top_info2 ul {
+    width: 100px;
+    float: left;
+    margin-left: 20px;
+}
+
+#footer_top_info2 ul li {
+    margin: 25px 0;
+
+}
+
+#footer_top_info3 {
+    float: left;
+    margin-top: 50px;
+    width: 25%;
+    color: white;
+    margin-left: 120px;
+}
+
+#footer_top_info3 p {
+    overflow: auto;
+    margin-top: 60px;
+}
+
+#footer_top_info3 img {
+    float: left;
+}
+
+/*css footer_bottom*/
+#footer_bottom {
+    background: #955073;
+    height: 100px;
+}
+
+fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 20px;
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+
+}
+
+#linkbottom {
+    margin-right: 169px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #955073;
+    color: white;
+    margin-left: 1106px;
+
+}
+
+.fa-twitter {
+    background: #955073;
+    color: white;
+}
+
+.fa-google {
+    background: #955073;
+    color: white;
+}
+
+.fa-youtube {
+    background: #955073;
+    color: white;
+}
