@@ -17,13 +17,13 @@ class User extends CI_Controller {
     }
 
     public function register_user(){
-
         $user=array(
             'user_name'=>$this->input->post('user_name'),
             'user_email'=>$this->input->post('user_email'),
             'user_password'=>md5($this->input->post('user_password')),
             'user_age'=>$this->input->post('user_age'),
-            'user_mobile'=>$this->input->post('user_mobile')
+            'user_mobile'=>$this->input->post('user_mobile'),
+            'user_role'=>$this->input->post('user_role')
         );
         print_r($user);
 
@@ -53,7 +53,6 @@ class User extends CI_Controller {
 
     function login_user(){
     $user_login=array(
-
         'user_email'=>$this->input->post('user_email'),
         'user_password'=>md5($this->input->post('user_password'))
 
@@ -67,8 +66,10 @@ class User extends CI_Controller {
         $this->session->set_userdata('user_name',$data['user_name']);
         $this->session->set_userdata('user_age',$data['user_age']);
         $this->session->set_userdata('user_mobile',$data['user_mobile']);
+        $this->session->set_userdata('user_role',$data['user_role']);
 
-        $this->load->view('layout.php');
+
+        $this->load->view('user_profile.php');
 
     }
     else{

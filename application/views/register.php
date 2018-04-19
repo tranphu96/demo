@@ -46,7 +46,7 @@
                                   <input class="form-control" placeholder="Mobile No" name="user_mobile" type="number" value="">
                               </div>
                               <div class="form-group">
-                                  <input class="form-control" placeholder="Role" name="user_role type="text" value="">
+                                  <input class="form-control" placeholder="Role" name="user_role" type="text" value="">
                               </div>
 
                               <input class="btn btn-lg btn-success btn-block" type="submit" value="Register" name="register" >

@@ -27,7 +27,7 @@
 </style>
 <body class="w3-light-grey">
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-    <span class="w3-bar-item w3-right">Xin Chào Admin</span>
+    <p class="w3-bar-item w3-right">Xin Chào <span style="color:#ffffee "><?php echo $this->session->userdata('user_name');?></span></p>
 </div>
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
     </div>

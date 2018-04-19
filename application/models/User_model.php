@@ -9,6 +9,7 @@ class User_model extends CI_model
         $this->db->insert('user', $user);
 
     }
+
     public function login_user($email, $pass)
     {
         $this->db->select('*');
