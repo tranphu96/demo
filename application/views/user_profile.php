@@ -27,7 +27,8 @@
 </style>
 <body class="w3-light-grey">
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-    <p class="w3-bar-item w3-right">Xin Chào <span style="color:#ffffee "><?php echo $this->session->userdata('user_name');?></span></p>
+    <span class="w3-bar-item w3-right">Xin Chào <?php echo $this->session->userdata('user_name');?></span>
+
 </div>
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
     </div>
@@ -53,13 +54,20 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td><?php echo $this->session->userdata('user_id'); ?></td>
-            <td><?php echo $this->session->userdata('user_name'); ?></td>
-            <td><?php echo $this->session->userdata('user_email'); ?></td>
-            <td><?php echo $this->session->userdata('user_age'); ?></td>
-            <td><?php echo $this->session->userdata('user_mobile'); ?></td>
-        </tr>
+
+
+            <?php foreach ($users as $user) : ?>
+                <tr>
+                    <td><?php echo $user['user_id']; ?></td>
+                    <td><?php echo  $user['user_name']; ?></td>
+                    <td><?php echo  $user['user_email']; ?></td>
+                    <td><?php echo  $user['user_age']; ?></td>
+                    <td><?php echo  $user['user_mobile']; ?></td>
+                </tr>
+            <?php endforeach;?>
+
+
+
         </tbody>
     </table>
 

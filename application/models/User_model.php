@@ -9,6 +9,14 @@ class User_model extends CI_model
         $this->db->insert('user', $user);
 
     }
+    public function get_users() {
+
+        if ($query = $this->db->get('user')) {
+            return $query->result_array();
+        } else {
+            return null;
+        }
+    }
 
     public function login_user($email, $pass)
     {
