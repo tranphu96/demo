@@ -3,14 +3,18 @@
 <head>
     <meta charset="utf-8">
     <title>Registration-CI Login Registration</title>
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.css'); ?>">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('Login/css/util.css');?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('Login/css/main.css');?>">
 </head>
 <body>
 
 <span style="background-color:red;">
-  <div class="container"><!-- container class is used to centered  the body of the browser with some decent width-->
-      <div class="row"><!-- row class is used for grid system in Bootstrap-->
-          <div class="col-md-4 col-md-offset-4"><!--col-md-4 is used to create the no of colums in the grid also use for medimum and large devices-->
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4 col-md-offset-4">
               <div class="login-panel panel panel-success">
                   <div class="panel-heading">
                       <h3 class="panel-title">Registration</h3>
@@ -28,32 +32,36 @@
                           <fieldset>
 
                               <div class="form-group">
-                                  <input class="form-control" placeholder="Name" name="user_name" type="text" autofocus>
+                                  <input class="form-control" placeholder="MAGV" name="magv" type="text" autofocus>
                               </div>
 
                               <div class="form-group">
-                                  <input class="form-control" placeholder="E-mail" name="user_email" type="email" autofocus>
+                                  <input class="form-control" placeholder="tengv" name="tengv" type="text" autofocus>
                               </div>
                               <div class="form-group">
-                                  <input class="form-control" placeholder="Password" name="user_password" type="password" value="">
+                                  <input class="form-control" placeholder="diachi" name="diachi" type="text" value="">
                               </div>
 
                               <div class="form-group">
-                                  <input class="form-control" placeholder="Age" name="user_age" type="number" value="">
+                                  <input class="form-control" placeholder="ngaysinh" name="ngaysinh" type="date" value="">
                               </div>
 
                               <div class="form-group">
-                                  <input class="form-control" placeholder="Mobile No" name="user_mobile" type="number" value="">
+                                  <input class="form-control" placeholder="gioitinh" name="gioitinh" type="text" value="">
                               </div>
                               <div class="form-group">
-                                  <input class="form-control" placeholder="Role" name="user_role" type="text" value="">
+                                  <input class="form-control" placeholder="trinhdo" name="trinhdo" type="text" value="">
+                              </div>
+                              <div class="container-login100-form-btn">
+                                    <button class="login100-form-btn"  type="submit" value="Register" name="register" >
+                                        Thêm
+                                    </button>
                               </div>
 
-                              <input class="btn btn-lg btn-success btn-block" type="submit" value="Register" name="register" >
 
                           </fieldset>
                       </form>
-                      <center></b> <br></b><a href="<?php echo base_url('user/login_view'); ?>">Login here</a></center><!--for centered text-->
+                      <center></b> <br></b><a href="<?php echo base_url('user/user_profile'); ?>">trangchu</a></center>
                   </div>
               </div>
           </div>

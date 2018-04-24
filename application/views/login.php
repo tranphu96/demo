@@ -1,62 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Login-CI Login Registration</title>
-    <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap.css'); ?>">
+    <title>Login V3</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="<?php echo base_url('Login/images/icons/favicon.ico'); ?>"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('Login/vendor/bootstrap/css/bootstrap.min.css');?>">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('Login/fonts/font-awesome-4.7.0/css/font-awesome.min.css');?>">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('Login/fonts/iconic/css/material-design-iconic-font.min.css');?>">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('Login/vendor/animate/animate.css');?>">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('Login/vendor/css-hamburgers/hamburgers.min.css');?>">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('Login/vendor/animsition/css/animsition.min.css');?>">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('Login/vendor/select2/select2.min.css');?>">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('Login/vendor/daterangepicker/daterangepicker.css');?>">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('Login/css/util.css');?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('Login/css/main.css');?>">
+    <!--===============================================================================================-->
 </head>
 <body>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="login-panel panel panel-success">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Login</h3>
+<div class="limiter">
+    <div class="container-login100" style="background-image: <?php echo base_url ();?>('images/bg-01.jpg');">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form" role="form" method="post" action="<?php echo base_url('user/login_user'); ?>">
+					<span class="login100-form-logo">
+						<i class="zmdi zmdi-landscape"></i>
+					</span>
+
+                <span class="login100-form-title p-b-34 p-t-27">
+						Log in
+					</span>
+
+
+                <div class="wrap-input100 validate-input" data-validate = "Enter username">
+                    <input class="input100"  placeholder="username" name="username" type="username" autofocus>
+                    <span class="focus-input100" data-placeholder="&#xf207;"></span>
                 </div>
-                <?php
-                $success_msg= $this->session->flashdata('success_msg');
-                $error_msg= $this->session->flashdata('error_msg');
 
-                if($success_msg){
-                    ?>
-                    <div class="alert alert-success">
-                        <?php echo $success_msg; ?>
-                    </div>
-                    <?php
-                }
-                if($error_msg){
-                    ?>
-                    <div class="alert alert-danger">
-                        <?php echo $error_msg; ?>
-                    </div>
-                    <?php
-                }
-                ?>
-
-                <div class="panel-body">
-                    <form role="form" method="post" action="<?php echo base_url('user/login_user'); ?>">
-                        <fieldset>
-                            <div class="form-group"  >
-                                <input class="form-control" placeholder="E-mail" name="user_email" type="email" autofocus>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="user_password" type="password" value="">
-                            </div>
-
-
-                            <input class="btn btn-lg btn-success btn-block" type="submit" value="login" name="login" >
-
-                        </fieldset>
-                    </form>
-                    <br>
-                    </b><center><a href="<?php echo base_url('user'); ?>">Register here</a></center><!--for centered text-->
-
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+                    <input class="input100" placeholder="Password" name="password" type="password" value="">
+                    <span class="focus-input100" data-placeholder="&#xf191;"></span>
                 </div>
-            </div>
+
+
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn" type="submit" value="login" name="login" >
+                        Login
+                    </button>
+                </div>
+
+
+            </form>
         </div>
     </div>
 </div>
+
+
+
 
 
 </body>
