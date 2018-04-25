@@ -19,6 +19,7 @@ class User extends CI_Controller {
 
     public function register_user(){
         $query=array(
+            'id'=>$this->input->post('id'),
             'magv'=>$this->input->post('magv'),
             'tengv'=>$this->input->post('tengv'),
             'diachi'=>($this->input->post('diachi')),
@@ -44,40 +45,43 @@ class User extends CI_Controller {
 
         }
     }
-    public function update()
-    {
-        $this->load->view("update.php");
-    }
-
-
     public function update_user(){
-        $query = array(
+        $query=array(
+            'id'=>$this->input->post('id'),
             'magv'=>$this->input->post('magv'),
             'tengv'=>$this->input->post('tengv'),
-            'diachi'=>$this->input->post('diachi'),
+            'diachi'=>($this->input->post('diachi')),
             'ngaysinh'=>$this->input->post('ngaysinh'),
             'gioitinh'=>$this->input->post('gioitinh'),
             'trinhdo'=>$this->input->post('trinhdo')
         );
+        print_r($query);
 
         $magv_check=$this->user_model->magv_check($query['magv']);
 
         if($magv_check){
-            $this->user_model->update_user($query);
+            $this->user_model->register_user($query);
             $this->session->set_flashdata('success_msg', 'Registered successfully.Now login to your account.');
-            update('user/user_profile');
+            redirect('user/user_profile');
 
         }
         else{
 
             $this->session->set_flashdata('error_msg', 'Error occured,Try again.');
-            $this->update('users');
+            redirect('user');
 
 
         }
     }
 
-
+    public  function delete()
+    {
+        $id = $this->input->get('id');
+        if ($this->user_model->delete($id)) {
+            $data['users'] = $this->user_model->get_users();
+            $this->load->view('user_profile.php', $data);
+        }
+    }
     public function login_view(){
         if(isset($_SESSION["username"])){
             $data['users'] = $this->user_model->get_users();

@@ -32,7 +32,7 @@
                           <fieldset>
 
                               <div class="form-group">
-                                  <input class="form-control" placeholder="MAGV" name="magv" type="text" autofocus>
+                                  <input class="form-control" placeholder="magv" name="magv" type="text" autofocus>
                               </div>
 
                               <div class="form-group">

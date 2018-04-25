@@ -65,6 +65,7 @@ tr{
     <table>
 
         <tr >
+            <th>ID</th>
             <th>Maso</th>
             <th>Name</th>
             <th>dia chi</th>
@@ -80,14 +81,15 @@ tr{
 
             <?php foreach ($users as $user) : ?>
                 <tr>
+                    <td><?php echo $user['id']; ?></td>
                     <td><?php echo $user['magv']; ?></td>
                     <td><?php echo  $user['tengv']; ?></td>
                     <td><?php echo  $user['diachi']; ?></td>
                     <td><?php echo  $user['ngaysinh']; ?></td>
                     <td><?php echo  $user['gioitinh']; ?></td>
                     <td><?php echo  $user['trinhdo']; ?></td>
-                    <td><a href='<?php echo base_url('user/update?userid=$row[magv]'); ?>'>Update</a></td>
-                    <td><a href='<?php echo base_url('user/Delete_user?userid=$row[magv]'); ?>'>Del</a></td>
+                    <td><a href='<?php echo base_url('user/update?id=' . $user['id']) ?>'>Update</a></td>
+                    <td><a href='<?php echo base_url('user/delete?id=' . $user['id']) ?>'>Del</a></td>
                 </tr>
 
 

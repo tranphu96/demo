@@ -6,17 +6,25 @@ class User_model extends CI_model
 
     public function register_user($query)
     {
-        
+
         $this->db->insert('hsgiaovien', $query);
 
     }
+
     public function update_user($query)
     {
 
         $this->db->update('hsgiaovien', $query);
-
     }
-    public function get_users() {
+
+
+     public function delete($id){
+         $this->load->database();
+         $this->db->where('id',$id);
+         $this->db->delete('hsgiaovien'); return true;
+     }
+    public function get_users()
+    {
 
         if ($query = $this->db->get('hsgiaovien')) {
             return $query->result_array();
@@ -24,11 +32,7 @@ class User_model extends CI_model
             return null;
         }
     }
-    public function delete($query) {
-        $query=$this->db->get('userid');
-        $this->db->where('userid','desc');
-        $this->db->delete('hsgiaovien', $query);
-    }
+
 
     public function login_user($user, $pass)
     {
@@ -42,6 +46,7 @@ class User_model extends CI_model
             return false;
         }
     }
+
     public function magv_check($magv)
     {
         $this->db->select('*');
