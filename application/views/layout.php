@@ -18,7 +18,7 @@
                 <li><a href="#">PORTFOLIO</a></li>
                 <li><a href="#">BLOG</a></li>
                 <li><a href="#">FEATUES</a></li>
-                <li><a href="<?php echo base_url ('view/user_profile.php');?>">CONTACTS</a></li>
+                <li><a href="<?php echo base_url ('user/user_profile');?>">CONTACTS</a></li>
 
             </ul>
         </nav>

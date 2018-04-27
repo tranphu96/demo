@@ -1,8 +1,10 @@
 <?php
 
-class User extends CI_Controller {
+class User extends CI_Controller
+{
 
-    public function __construct(){
+    public function __construct()
+    {
 
         parent::__construct();
         $this->load->helper('url');
@@ -10,34 +12,37 @@ class User extends CI_Controller {
         $this->load->library('session');
 
     }
-
+    public function layout()
+    {
+        $this->load->view("layout.php");
+    }
     public function index()
     {
         $this->load->view("register.php");
     }
 
 
-    public function register_user(){
-        $query=array(
-            'id'=>$this->input->post('id'),
-            'magv'=>$this->input->post('magv'),
-            'tengv'=>$this->input->post('tengv'),
-            'diachi'=>($this->input->post('diachi')),
-            'ngaysinh'=>$this->input->post('ngaysinh'),
-            'gioitinh'=>$this->input->post('gioitinh'),
-            'trinhdo'=>$this->input->post('trinhdo')
+    public function register_user()
+    {
+        $query = array(
+            'id' => $this->input->post('id'),
+            'magv' => $this->input->post('magv'),
+            'tengv' => $this->input->post('tengv'),
+            'diachi' => ($this->input->post('diachi')),
+            'ngaysinh' => $this->input->post('ngaysinh'),
+            'gioitinh' => $this->input->post('gioitinh'),
+            'trinhdo' => $this->input->post('trinhdo')
         );
         print_r($query);
 
-        $magv_check=$this->user_model->magv_check($query['magv']);
+        $magv_check = $this->user_model->magv_check($query['magv']);
 
-        if($magv_check){
+        if ($magv_check) {
             $this->user_model->register_user($query);
             $this->session->set_flashdata('success_msg', 'Registered successfully.Now login to your account.');
             redirect('user/user_profile');
 
-        }
-        else{
+        } else {
 
             $this->session->set_flashdata('error_msg', 'Error occured,Try again.');
             redirect('user');
@@ -45,34 +50,31 @@ class User extends CI_Controller {
 
         }
     }
-    public function update_user(){
-        $query=array(
-            'id'=>$this->input->post('id'),
-            'magv'=>$this->input->post('magv'),
-            'tengv'=>$this->input->post('tengv'),
-            'diachi'=>($this->input->post('diachi')),
-            'ngaysinh'=>$this->input->post('ngaysinh'),
-            'gioitinh'=>$this->input->post('gioitinh'),
-            'trinhdo'=>$this->input->post('trinhdo')
-        );
-        print_r($query);
 
-        $magv_check=$this->user_model->magv_check($query['magv']);
-
-        if($magv_check){
-            $this->user_model->register_user($query);
-            $this->session->set_flashdata('success_msg', 'Registered successfully.Now login to your account.');
-            redirect('user/user_profile');
-
-        }
-        else{
-
-            $this->session->set_flashdata('error_msg', 'Error occured,Try again.');
-            redirect('user');
-
-
-        }
+    public function update()
+    {
+        $id = $_GET['id'];
+        $data['users'] = $this->user_model->show_user_id($id);
+        $this->load->view('update', $data);
     }
+
+    public function update_user_id()
+    {
+        $id = $this->input->post('id');
+        $data = array(
+            'magv' => $this->input->post('magv'),
+            'tengv' => $this->input->post('tengv'),
+            'diachi' => $this->input->post('diachi'),
+            'ngaysinh' => $this->input->post('ngaysinh'),
+            'gioitinh' => $this->input->post('gioitinh'),
+            'trinhdo' => $this->input->post('trinhdo')
+        );
+        $this->user_model->update_user_id($id, $data);
+        $this->user_model->show_user_id($id);
+        $data['users'] = $this->user_model->get_users();
+        $this->load->view('user_profile.php',$data);
+    }
+
 
     public  function delete()
     {

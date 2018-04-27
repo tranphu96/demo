@@ -27,9 +27,13 @@
                       echo $error_msg;
                   }
                   ?>
+                      <?php foreach ($users as $user) : ?>
+                      <form role="form" method="post" action="<?php echo base_url('user/update_user_id'); ?>">
 
-                      <form role="form" method="post" action="<?php echo base_url('user/update_user'); ?>">
                           <fieldset>
+                               <div class="form-group">
+                                  <input class="form-control" placeholder="id" name="id" type="text" autofocus>
+                              </div>
 
                               <div class="form-group">
                                   <input class="form-control" placeholder="magv" name="magv" type="text" autofocus>
@@ -61,6 +65,7 @@
 
                           </fieldset>
                       </form>
+                      <?php endforeach; ?>
                       <center></b> <br></b><a href="<?php echo base_url('user/user_profile'); ?>">trangchu</a></center>
                   </div>
               </div>

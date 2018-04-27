@@ -10,13 +10,26 @@ class User_model extends CI_model
         $this->db->insert('hsgiaovien', $query);
 
     }
-
-    public function update_user($query)
+    public function show_users()
     {
-
-        $this->db->update('hsgiaovien', $query);
+        $query = $this->db->get('hsgiaovien');
+        $query_result = $query->result();
+        return $query_result;
     }
-
+    public function show_user_id($data)
+    {
+        $this->db->select('*');
+        $this->db->from('hsgiaovien');
+        $this->db->where('id', $data);
+        $query = $this->db->get();
+        $result = $query->result();
+        return $result;
+    }
+    public function update_user_id($id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('hsgiaovien', $data);
+    }
 
      public function delete($id){
          $this->load->database();
