@@ -28,8 +28,11 @@
                   }
                   ?>
 
-                      <form role="form" method="post" action="<?php echo base_url('user/register_user'); ?>">
+                      <form role="form" method="post" enctype="multipart/form-data" action="<?php echo base_url('user/register_user'); ?>">
                           <fieldset>
+                              <div class="form-group">
+                                  <input class="form-control" placeholder="id" name="id" type="text" autofocus>
+                              </div>
 
                               <div class="form-group">
                                   <input class="form-control" placeholder="MAGV" name="magv" type="text" autofocus>
@@ -53,6 +56,9 @@
                                   <input class="form-control" placeholder="trinhdo" name="trinhdo" type="text" value="">
                               </div>
                               <div class="container-login100-form-btn">
+                                  <div class="form-group">
+                              <input type="file" name="image" size="20" />
+                              </div>
                                     <button class="login100-form-btn"  type="submit" value="Register" name="register" >
                                         Thêm
                                     </button>

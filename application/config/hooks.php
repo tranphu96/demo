@@ -11,8 +11,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |	https://codeigniter.com/user_guide/general/hooks.html
 |
 */
-$hook [ 'pre_controller ' ]  =  function ()
-{
-   echo 'xen chao cac ban';
-   Exit();
-};
+$hook['pre_controller'] = array(
+    'class'    => 'user',
+    'function' => 'layout',
+    'filename' => 'layout.php',
+    'filepath' => 'hooks',
+    'params'   => array('beer', 'wine', 'snacks')
+
+);

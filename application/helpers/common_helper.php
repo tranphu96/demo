@@ -1,14 +1,14 @@
 <?php
-function public_helper($string = '')
-	{
-		return base_url('public/'.$string);
-	}
-	function admin_url($string='')
-	{
-		return base_url('admin/'.$string);
-	}
-	function user_url($string='')
-	{
-		return base_url('user/'.$string);
-	}
-?>
+function public_url($url = ''){
+    return base_url('public/'.$url);
+}
+
+
+function pre($list, $exit = true){
+    echo "<pre>";
+    print_r($list);
+    if($exit){
+        die();
+    }
+
+}

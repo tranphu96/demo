@@ -1,14 +1,12 @@
 <?php
 
-class User_model extends CI_model
+class User_model extends CI_Model
 {
 
 
     public function register_user($query)
     {
-
         $this->db->insert('hsgiaovien', $query);
-
     }
     public function show_users()
     {
@@ -30,12 +28,13 @@ class User_model extends CI_model
         $this->db->where('id', $id);
         $this->db->update('hsgiaovien', $data);
     }
+    public function delete($id)
+    {
+        $this->load->database();
+        $this->db->where('id', $id);
+        $this->db->delete('hsgiaovien', array('id' => $id));return true;
+    }
 
-     public function delete($id){
-         $this->load->database();
-         $this->db->where('id',$id);
-         $this->db->delete('hsgiaovien'); return true;
-     }
     public function get_users()
     {
 

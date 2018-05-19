@@ -31,7 +31,7 @@
                       <form role="form" method="post" action="<?php echo base_url('user/update_user_id'); ?>">
 
                           <fieldset>
-                               <div class="form-group">
+                              <div class="form-group">
                                   <input class="form-control" placeholder="id" name="id" type="text" autofocus>
                               </div>
 
@@ -55,6 +55,9 @@
                               </div>
                               <div class="form-group">
                                   <input class="form-control" placeholder="trinhdo" name="trinhdo" type="text" value="">
+                              </div>
+                              <div class="form-group">
+                              <input type="file" name="image" size="20" />
                               </div>
                               <div class="container-login100-form-btn">
                                     <button class="login100-form-btn"  type="submit" value="Update" name="update" >

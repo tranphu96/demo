@@ -1,0 +1,3 @@
+<?php
+    unlink('girl.png')
+?>

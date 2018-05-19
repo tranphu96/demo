@@ -1,79 +1,96 @@
-<?php
-    $conn= mysqli_connect("localhost","root");
-    $db= mysqli_select_db("test");
-    mysqli_query("set names ","utf8");
-?>
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style>
     table {
         border-collapse: collapse;
-        width: 100%;
+        width: 90%;
+        margin-top: -300px;
+        margin-left: 100px;
+        border-bottom: 3px;
+
+
     }
 
+    td{
+
+    }
     th, td {
         text-align: left;
         padding: 8px;
+
     }
 
-    tr:nth-child(even) {
-        background-color: #99CCFF
+    tr{
+        border-bottom: 3px;
+        border-bottom: 1px solid #cdcdcd;
     }
 
     th {
-        background-color: #144E32;
-        color: white;
+        background-color: #efefef;
+        border-bottom: 1px solid #cdcdcd;
+        color: black;
+
     }
 </style>
-<body class="w3-light-grey">
-<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-    <p class="w3-bar-item w3-right">Xin Chào <span style="color:#ffffee "><?php echo $this->session->userdata('user_name');?></span></p>
-</div>
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-    </div>
-    <hr>
-    <div class="w3-bar-block">
-        <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-home"></i>  Trang Chủ</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user-circle-o"></i>  Quản Lý Admin</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-user-circle-o"></i> Quản Lý Nhân Viên</a>
-        <a href="#" class="w3-bar-item w3-button w3-padding w3-padding"><i class="fa fa-folder-o"></i> Quản Lý Tin Tức</a>
-        <a href="<?php echo base_url('user/user_logout');?>" class="w3-bar-item w3-button w3-padding w3-blue "><i class="fa fa-sign-out"></i> Logout</a>
+<body>
+<?php
+// load ra file head
+$this->load->view('admin/top');
+?>
+<div class="w3-main" style="margin-left: -61px;margin-top: 359px;">
 
-    </div>
-</nav>
-
-<div class="w3-main" style="margin-left:300px;margin-top:43px;">
     <table>
-        <tr>
+
+        <tr >
             <th>ID</th>
+            <th>Maso</th>
             <th>Name</th>
-            <th>Email</th>
-            <th>Age</th>
-            <th>Mobile</th>
+            <th>dia chi</th>
+            <th>ngay sinh</th>
+            <th>gioi tinh</th>
+            <th>trinh do</th>
+            <th>Hinh anh</th>
+            <th>Sửa dữ liệu</th>
+            <th>Xóa dữ liệu</th>
         </tr>
-        <?php
-            $qr= "Select * from user";
-            $res =mysqli_query($qr);
-            while ($item =mysql_fetch_array($res)){
-        ?>
-        <tr>
-            <td><?php echo $item["user_id"];?></td>
-            <td><?php echo $item["user_name"]; ?></td>
-            <td><?php echo $item["user_email"]; ?></td>
-            <td><?php echo $item["user_age"]; ?></td>
-            <td><?php echo $item["user_mobile"]; ?></td>
-        </tr>
-        <?php
-        }
-        ?>
+        </thead>
+        <tbody>
+
+
+        <?php foreach ($users as $user) : ?>
+
+            <tr>
+                <td><?php echo $user['id']; ?></td>
+                <td><?php echo $user['magv']; ?></td>
+                <td><?php echo  $user['tengv']; ?></td>
+                <td><?php echo  $user['diachi']; ?></td>
+                <td><?php echo  $user['ngaysinh']; ?></td>
+                <td><?php echo  $user['gioitinh']; ?></td>
+                <td><?php echo  $user['trinhdo']; ?></td>
+
+                <!-- --><?php /*echo "<pre>";
+                print_r($user);
+                echo "</pre>"; */?>
+
+                <td><img src="<?php echo base_url ();?>assets/upload/<?php echo $user['image'];?>" width="100px" height="100px"  ></td>
+                <td><a href='<?php echo base_url('user/update?id=' . $user['id']) ?>'>Update</a></td>
+                <td><a href='<?php echo base_url('user/delete?id=' . $user['id']) ?>'>Del</a></td>
+            </tr>
+
+
+        <?php endforeach;?>
+
+
+
+        </tbody>
     </table>
-
-
+    <div class="clear"></div>
+</div>
 </div>
 </body>
 </html>
